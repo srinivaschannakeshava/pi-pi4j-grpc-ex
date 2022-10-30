@@ -1,0 +1,63 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id "com.google.protobuf" version "0.8.19"
+}
+
+group = 'ini.srini91.learn'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5' 
+    implementation 'com.google.protobuf:protobuf-java:3.21.6'
+    implementation 'io.grpc:grpc-protobuf:1.49.1'
+    implementation 'io.grpc:grpc-stub:1.49.1'
+    implementation 'io.grpc:grpc-netty:1.49.1'
+    compileOnly 'org.apache.tomcat:tomcat-annotations-api:9.0.65'
+    implementation 'com.pi4j:pi4j-core:2.1.1'
+    implementation 'com.pi4j:pi4j-plugin-raspberrypi:2.1.1'
+    implementation 'com.pi4j:pi4j-plugin-pigpio:2.1.1'
+//    implementation 'info.picocli:picocli:4.6.3'
+//    implementation 'com.pi4j:pi4j-plugin-linuxfs:2.1.1'
+}
+
+application {
+	mainClass= 'in.srini91.learn.PiGrpcGpioApplication'
+}
+
+protobuf{
+    protoc {artifact = "com.google.protobuf:protoc:3.21.6"}
+    plugins{
+        grpc {artifact = "io.grpc:protoc-gen-grpc-java:1.49.1"}
+    }
+    generateProtoTasks{
+        all()*.plugins {grpc {}}
+    }
+    // default proto plugin generate stub in build folder
+    // change the stub generate folder
+    generatedFilesBaseDir = "$projectDir/src"
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src/main/proto','src/main/grpc'
+        }
+    }
+}
+
+clean.doFirst{
+    delete  "${rootDir}/src/main/java/in/srini91/learn/proto/models/"
+    delete "${rootDir}/src/main/grpc/in/srini91/learn/proto/models/"
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

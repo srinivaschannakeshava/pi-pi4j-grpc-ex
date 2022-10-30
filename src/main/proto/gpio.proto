@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package= "in.srini91.learn.proto.models";
+
+message GpioRequest{
+	int32 pinNo = 1;
+	GpioType pinType = 2;
+	int32 debounce_value = 3;
+	GpioDigitalState defaultState = 4;
+	GpioDigitalState state = 5;
+	bool inverted = 6;
+
+}
+
+message GpioData{
+	GpioDigitalState digitalState = 1;
+}
+
+enum GpioType{
+	INPUT = 0;
+	OUTPUT = 1;
+}
+
+enum GpioDigitalState{
+	LOW = 0;
+	HIGH = 1;
+}
+
+message LedStripData{
+	int32 pixelCount = 1;
+	double brightness = 2;
+	bool allPixel = 3;
+	int32 pixelNo = 4;
+	int32 pixelColor = 5;
+}
+
+
+service PodmanDemoService{
+	rpc readGpioState(GpioRequest) returns (stream GpioData) ;
+	rpc writeGpioData(stream GpioRequest) returns (GpioData);
+	rpc ledStripData(stream LedStripData) returns (LedStripData);
+}
