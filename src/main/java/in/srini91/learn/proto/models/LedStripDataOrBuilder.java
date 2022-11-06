@@ -36,4 +36,10 @@ public interface LedStripDataOrBuilder extends
    * @return The pixelColor.
    */
   int getPixelColor();
+
+  /**
+   * <code>bool turnOff = 6;</code>
+   * @return The turnOff.
+   */
+  boolean getTurnOff();
 }

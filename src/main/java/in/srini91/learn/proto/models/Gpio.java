@@ -44,16 +44,17 @@ public final class Gpio {
       "GpioDigitalState\022 \n\005state\030\005 \001(\0162\021.GpioDi" +
       "gitalState\022\020\n\010inverted\030\006 \001(\010\"3\n\010GpioData" +
       "\022\'\n\014digitalState\030\001 \001(\0162\021.GpioDigitalStat" +
-      "e\"m\n\014LedStripData\022\022\n\npixelCount\030\001 \001(\005\022\022\n" +
+      "e\"~\n\014LedStripData\022\022\n\npixelCount\030\001 \001(\005\022\022\n" +
       "\nbrightness\030\002 \001(\001\022\020\n\010allPixel\030\003 \001(\010\022\017\n\007p" +
-      "ixelNo\030\004 \001(\005\022\022\n\npixelColor\030\005 \001(\005*!\n\010Gpio" +
-      "Type\022\t\n\005INPUT\020\000\022\n\n\006OUTPUT\020\001*%\n\020GpioDigit" +
-      "alState\022\007\n\003LOW\020\000\022\010\n\004HIGH\020\0012\233\001\n\021PodmanDem" +
-      "oService\022*\n\rreadGpioState\022\014.GpioRequest\032" +
-      "\t.GpioData0\001\022*\n\rwriteGpioData\022\014.GpioRequ" +
-      "est\032\t.GpioData(\001\022.\n\014ledStripData\022\r.LedSt" +
-      "ripData\032\r.LedStripData(\001B!\n\035in.srini91.l" +
-      "earn.proto.modelsP\001b\006proto3"
+      "ixelNo\030\004 \001(\005\022\022\n\npixelColor\030\005 \001(\005\022\017\n\007turn" +
+      "Off\030\006 \001(\010*!\n\010GpioType\022\t\n\005INPUT\020\000\022\n\n\006OUTP" +
+      "UT\020\001*%\n\020GpioDigitalState\022\007\n\003LOW\020\000\022\010\n\004HIG" +
+      "H\020\0012\233\001\n\021PodmanDemoService\022*\n\rreadGpioSta" +
+      "te\022\014.GpioRequest\032\t.GpioData0\001\022*\n\rwriteGp" +
+      "ioData\022\014.GpioRequest\032\t.GpioData(\001\022.\n\014led" +
+      "StripData\022\r.LedStripData\032\r.LedStripData(" +
+      "\001B!\n\035in.srini91.learn.proto.modelsP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -76,7 +77,7 @@ public final class Gpio {
     internal_static_LedStripData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_LedStripData_descriptor,
-        new java.lang.String[] { "PixelCount", "Brightness", "AllPixel", "PixelNo", "PixelColor", });
+        new java.lang.String[] { "PixelCount", "Brightness", "AllPixel", "PixelNo", "PixelColor", "TurnOff", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

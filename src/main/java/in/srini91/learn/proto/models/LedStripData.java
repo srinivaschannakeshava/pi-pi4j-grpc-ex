@@ -73,6 +73,11 @@ private static final long serialVersionUID = 0L;
             pixelColor_ = input.readInt32();
             break;
           }
+          case 48: {
+
+            turnOff_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +167,17 @@ private static final long serialVersionUID = 0L;
     return pixelColor_;
   }
 
+  public static final int TURNOFF_FIELD_NUMBER = 6;
+  private boolean turnOff_;
+  /**
+   * <code>bool turnOff = 6;</code>
+   * @return The turnOff.
+   */
+  @java.lang.Override
+  public boolean getTurnOff() {
+    return turnOff_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -190,6 +206,9 @@ private static final long serialVersionUID = 0L;
     }
     if (pixelColor_ != 0) {
       output.writeInt32(5, pixelColor_);
+    }
+    if (turnOff_ != false) {
+      output.writeBool(6, turnOff_);
     }
     unknownFields.writeTo(output);
   }
@@ -220,6 +239,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(5, pixelColor_);
     }
+    if (turnOff_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, turnOff_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -246,6 +269,8 @@ private static final long serialVersionUID = 0L;
         != other.getPixelNo()) return false;
     if (getPixelColor()
         != other.getPixelColor()) return false;
+    if (getTurnOff()
+        != other.getTurnOff()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -269,6 +294,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getPixelNo();
     hash = (37 * hash) + PIXELCOLOR_FIELD_NUMBER;
     hash = (53 * hash) + getPixelColor();
+    hash = (37 * hash) + TURNOFF_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTurnOff());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +440,8 @@ private static final long serialVersionUID = 0L;
 
       pixelColor_ = 0;
 
+      turnOff_ = false;
+
       return this;
     }
 
@@ -443,6 +473,7 @@ private static final long serialVersionUID = 0L;
       result.allPixel_ = allPixel_;
       result.pixelNo_ = pixelNo_;
       result.pixelColor_ = pixelColor_;
+      result.turnOff_ = turnOff_;
       onBuilt();
       return result;
     }
@@ -505,6 +536,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPixelColor() != 0) {
         setPixelColor(other.getPixelColor());
+      }
+      if (other.getTurnOff() != false) {
+        setTurnOff(other.getTurnOff());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -686,6 +720,37 @@ private static final long serialVersionUID = 0L;
     public Builder clearPixelColor() {
       
       pixelColor_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean turnOff_ ;
+    /**
+     * <code>bool turnOff = 6;</code>
+     * @return The turnOff.
+     */
+    @java.lang.Override
+    public boolean getTurnOff() {
+      return turnOff_;
+    }
+    /**
+     * <code>bool turnOff = 6;</code>
+     * @param value The turnOff to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTurnOff(boolean value) {
+      
+      turnOff_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool turnOff = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTurnOff() {
+      
+      turnOff_ = false;
       onChanged();
       return this;
     }

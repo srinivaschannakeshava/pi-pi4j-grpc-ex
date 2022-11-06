@@ -1,6 +1,5 @@
 package in.srini91.learn.service.observers;
 
-import java.time.Duration;
 import java.time.Instant;
 
 import com.pi4j.context.Context;
@@ -30,23 +29,35 @@ public class LedStripDataObserver implements StreamObserver<LedStripData> {
 		int pixelColor = value.getPixelColor();
 		if (ledstrip == null) {
 			ledstrip = new LEDStrip(this.pi4j, value.getPixelCount(), value.getBrightness());
-			lastState = value;
+//			lastState = value;
+			ledstrip.allOff();
 			ledstrip.setStripColor(pixelColor);
 			ledstrip.render();
-			sleep(1000);
-			ledstrip.setStripColor(pixelColor);
-			ledstrip.render();
-			instant = Instant.now();
+//			sleep(1500);
+//			instant = Instant.now();
 			System.out.println("Intialized LED strip!!");
 		} else {
-			if (Duration.between(instant, Instant.now()).toMillis() > 3000 && lastState.getPixelColor() != pixelColor) {
+			if (value.getTurnOff()) {
+				System.out.println("Turnning LED OFF");
+				ledstrip.allOff();
+				ledstrip.render();
+//				sleep(1500);
+//				instant = Instant.now();
+			} else // if (!value.getTurnOff()) {// Duration.between(instant,
+					// Instant.now()).toMillis() > 500 &&
+					// && lastState.getPixelColor() != pixelColor
+			{
 				System.out.println("Setting Color : " + pixelColor);
+				ledstrip.allOff();
 				ledstrip.setStripColor(pixelColor);
 				ledstrip.render();
-				instant = Instant.now();
-				lastState = value;
+//				instant = Instant.now();
+//				lastState = value;
+//				sleep(1500);
 			}
+
 		}
+
 	}
 
 	@Override
@@ -62,8 +73,7 @@ public class LedStripDataObserver implements StreamObserver<LedStripData> {
 		responseObserver.onNext(lastState);
 		responseObserver.onCompleted();
 		ledstrip.allOff();
-		ledstrip.render();
-		sleep(2000);
+//		sleep(1000);
 		ledstrip.close();
 		pi4j.shutdown();
 	}

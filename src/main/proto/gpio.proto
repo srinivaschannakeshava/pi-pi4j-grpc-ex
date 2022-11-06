@@ -33,6 +33,7 @@ message LedStripData{
 	bool allPixel = 3;
 	int32 pixelNo = 4;
 	int32 pixelColor = 5;
+	bool turnOff = 6;
 }
 
 

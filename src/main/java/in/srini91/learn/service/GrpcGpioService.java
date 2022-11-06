@@ -35,24 +35,30 @@ public class GrpcGpioService extends PodmanDemoServiceImplBase {
 		SimpleButton button = new SimpleButton(pi4j, pin, request.getInverted(), debouce);
 //		button.onDown(() -> {
 //			System.out.println("Touch ID Not touched");
-//			responseObserver.onNext(GpioData.newBuilder().setDigitalState(GpioDigitalState.LOW).build());
+//			responseObserver.onNext(GpioData.newBuilder().setDigitalState(GpioDigitalState.LOW).build());ps q
 //		});
-//		button.onUp(() -> {
-//			System.out.println("Touch ID touched");
-//			responseObserver.onNext(GpioData.newBuilder().setDigitalState(GpioDigitalState.HIGH).build());
-//		});
-		button.whilePressed(() -> {
-			System.out.println("Touch ID touched for 1 sec");
+		button.onUp(() -> {
+			System.out.println("Touch ID touched");
 			responseObserver.onNext(GpioData.newBuilder().setDigitalState(GpioDigitalState.HIGH).build());
-		}, 500);
-		try {
-			Thread.sleep(60000);// Sleep for 60 sec
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		});
+//		button.whilePressed(() -> {
+//			System.out.println("Touch ID touched for 1 sec");
+//			responseObserver.onNext(GpioData.newBuilder().setDigitalState(GpioDigitalState.HIGH).build());
+//		}, 700);
+		while (!io.grpc.Context.current().isCancelled()) {
+			sleep(300000);
 		}
 		button.deRegisterAll();
 		pi4j.shutdown();
 		responseObserver.onCompleted();
+	}
+
+	private void sleep(int millis) {
+		try {
+			Thread.sleep(millis);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
