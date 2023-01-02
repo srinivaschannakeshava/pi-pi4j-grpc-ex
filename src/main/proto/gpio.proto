@@ -36,9 +36,17 @@ message LedStripData{
 	bool turnOff = 6;
 }
 
+message UartData{
+	string data = 1;
+}
+
+message Status{
+	bool status = 1;
+}
 
 service PodmanDemoService{
 	rpc readGpioState(GpioRequest) returns (stream GpioData) ;
 	rpc writeGpioData(stream GpioRequest) returns (GpioData);
 	rpc ledStripData(stream LedStripData) returns (LedStripData);
+	rpc uartWriteData(stream UartData) returns (Status);
 }

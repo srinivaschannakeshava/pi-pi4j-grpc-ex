@@ -15,29 +15,29 @@ public final class PodmanDemoServiceGrpc {
   public static final String SERVICE_NAME = "PodmanDemoService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest,
-      in.srini91.learn.proto.models.GpioData> getReadGpioStateMethod;
+  private static volatile io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest,
+      in.bosch.sdv.proto.models.GpioData> getReadGpioStateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "readGpioState",
-      requestType = in.srini91.learn.proto.models.GpioRequest.class,
-      responseType = in.srini91.learn.proto.models.GpioData.class,
+      requestType = in.bosch.sdv.proto.models.GpioRequest.class,
+      responseType = in.bosch.sdv.proto.models.GpioData.class,
       methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest,
-      in.srini91.learn.proto.models.GpioData> getReadGpioStateMethod() {
-    io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest, in.srini91.learn.proto.models.GpioData> getReadGpioStateMethod;
+  public static io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest,
+      in.bosch.sdv.proto.models.GpioData> getReadGpioStateMethod() {
+    io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest, in.bosch.sdv.proto.models.GpioData> getReadGpioStateMethod;
     if ((getReadGpioStateMethod = PodmanDemoServiceGrpc.getReadGpioStateMethod) == null) {
       synchronized (PodmanDemoServiceGrpc.class) {
         if ((getReadGpioStateMethod = PodmanDemoServiceGrpc.getReadGpioStateMethod) == null) {
           PodmanDemoServiceGrpc.getReadGpioStateMethod = getReadGpioStateMethod =
-              io.grpc.MethodDescriptor.<in.srini91.learn.proto.models.GpioRequest, in.srini91.learn.proto.models.GpioData>newBuilder()
+              io.grpc.MethodDescriptor.<in.bosch.sdv.proto.models.GpioRequest, in.bosch.sdv.proto.models.GpioData>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "readGpioState"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.GpioRequest.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.GpioRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.GpioData.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.GpioData.getDefaultInstance()))
               .setSchemaDescriptor(new PodmanDemoServiceMethodDescriptorSupplier("readGpioState"))
               .build();
         }
@@ -46,29 +46,29 @@ public final class PodmanDemoServiceGrpc {
     return getReadGpioStateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest,
-      in.srini91.learn.proto.models.GpioData> getWriteGpioDataMethod;
+  private static volatile io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest,
+      in.bosch.sdv.proto.models.GpioData> getWriteGpioDataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "writeGpioData",
-      requestType = in.srini91.learn.proto.models.GpioRequest.class,
-      responseType = in.srini91.learn.proto.models.GpioData.class,
+      requestType = in.bosch.sdv.proto.models.GpioRequest.class,
+      responseType = in.bosch.sdv.proto.models.GpioData.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest,
-      in.srini91.learn.proto.models.GpioData> getWriteGpioDataMethod() {
-    io.grpc.MethodDescriptor<in.srini91.learn.proto.models.GpioRequest, in.srini91.learn.proto.models.GpioData> getWriteGpioDataMethod;
+  public static io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest,
+      in.bosch.sdv.proto.models.GpioData> getWriteGpioDataMethod() {
+    io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.GpioRequest, in.bosch.sdv.proto.models.GpioData> getWriteGpioDataMethod;
     if ((getWriteGpioDataMethod = PodmanDemoServiceGrpc.getWriteGpioDataMethod) == null) {
       synchronized (PodmanDemoServiceGrpc.class) {
         if ((getWriteGpioDataMethod = PodmanDemoServiceGrpc.getWriteGpioDataMethod) == null) {
           PodmanDemoServiceGrpc.getWriteGpioDataMethod = getWriteGpioDataMethod =
-              io.grpc.MethodDescriptor.<in.srini91.learn.proto.models.GpioRequest, in.srini91.learn.proto.models.GpioData>newBuilder()
+              io.grpc.MethodDescriptor.<in.bosch.sdv.proto.models.GpioRequest, in.bosch.sdv.proto.models.GpioData>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "writeGpioData"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.GpioRequest.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.GpioRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.GpioData.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.GpioData.getDefaultInstance()))
               .setSchemaDescriptor(new PodmanDemoServiceMethodDescriptorSupplier("writeGpioData"))
               .build();
         }
@@ -77,35 +77,66 @@ public final class PodmanDemoServiceGrpc {
     return getWriteGpioDataMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<in.srini91.learn.proto.models.LedStripData,
-      in.srini91.learn.proto.models.LedStripData> getLedStripDataMethod;
+  private static volatile io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.LedStripData,
+      in.bosch.sdv.proto.models.LedStripData> getLedStripDataMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "ledStripData",
-      requestType = in.srini91.learn.proto.models.LedStripData.class,
-      responseType = in.srini91.learn.proto.models.LedStripData.class,
+      requestType = in.bosch.sdv.proto.models.LedStripData.class,
+      responseType = in.bosch.sdv.proto.models.LedStripData.class,
       methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
-  public static io.grpc.MethodDescriptor<in.srini91.learn.proto.models.LedStripData,
-      in.srini91.learn.proto.models.LedStripData> getLedStripDataMethod() {
-    io.grpc.MethodDescriptor<in.srini91.learn.proto.models.LedStripData, in.srini91.learn.proto.models.LedStripData> getLedStripDataMethod;
+  public static io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.LedStripData,
+      in.bosch.sdv.proto.models.LedStripData> getLedStripDataMethod() {
+    io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.LedStripData, in.bosch.sdv.proto.models.LedStripData> getLedStripDataMethod;
     if ((getLedStripDataMethod = PodmanDemoServiceGrpc.getLedStripDataMethod) == null) {
       synchronized (PodmanDemoServiceGrpc.class) {
         if ((getLedStripDataMethod = PodmanDemoServiceGrpc.getLedStripDataMethod) == null) {
           PodmanDemoServiceGrpc.getLedStripDataMethod = getLedStripDataMethod =
-              io.grpc.MethodDescriptor.<in.srini91.learn.proto.models.LedStripData, in.srini91.learn.proto.models.LedStripData>newBuilder()
+              io.grpc.MethodDescriptor.<in.bosch.sdv.proto.models.LedStripData, in.bosch.sdv.proto.models.LedStripData>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ledStripData"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.LedStripData.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.LedStripData.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  in.srini91.learn.proto.models.LedStripData.getDefaultInstance()))
+                  in.bosch.sdv.proto.models.LedStripData.getDefaultInstance()))
               .setSchemaDescriptor(new PodmanDemoServiceMethodDescriptorSupplier("ledStripData"))
               .build();
         }
       }
     }
     return getLedStripDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.UartData,
+      in.bosch.sdv.proto.models.Status> getUartWriteDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "uartWriteData",
+      requestType = in.bosch.sdv.proto.models.UartData.class,
+      responseType = in.bosch.sdv.proto.models.Status.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+  public static io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.UartData,
+      in.bosch.sdv.proto.models.Status> getUartWriteDataMethod() {
+    io.grpc.MethodDescriptor<in.bosch.sdv.proto.models.UartData, in.bosch.sdv.proto.models.Status> getUartWriteDataMethod;
+    if ((getUartWriteDataMethod = PodmanDemoServiceGrpc.getUartWriteDataMethod) == null) {
+      synchronized (PodmanDemoServiceGrpc.class) {
+        if ((getUartWriteDataMethod = PodmanDemoServiceGrpc.getUartWriteDataMethod) == null) {
+          PodmanDemoServiceGrpc.getUartWriteDataMethod = getUartWriteDataMethod =
+              io.grpc.MethodDescriptor.<in.bosch.sdv.proto.models.UartData, in.bosch.sdv.proto.models.Status>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.CLIENT_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "uartWriteData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  in.bosch.sdv.proto.models.UartData.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  in.bosch.sdv.proto.models.Status.getDefaultInstance()))
+              .setSchemaDescriptor(new PodmanDemoServiceMethodDescriptorSupplier("uartWriteData"))
+              .build();
+        }
+      }
+    }
+    return getUartWriteDataMethod;
   }
 
   /**
@@ -158,23 +189,30 @@ public final class PodmanDemoServiceGrpc {
 
     /**
      */
-    public void readGpioState(in.srini91.learn.proto.models.GpioRequest request,
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData> responseObserver) {
+    public void readGpioState(in.bosch.sdv.proto.models.GpioRequest request,
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReadGpioStateMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioRequest> writeGpioData(
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData> responseObserver) {
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioRequest> writeGpioData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getWriteGpioDataMethod(), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.LedStripData> ledStripData(
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.LedStripData> responseObserver) {
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.LedStripData> ledStripData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.LedStripData> responseObserver) {
       return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getLedStripDataMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.UartData> uartWriteData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.Status> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getUartWriteDataMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -183,23 +221,30 @@ public final class PodmanDemoServiceGrpc {
             getReadGpioStateMethod(),
             io.grpc.stub.ServerCalls.asyncServerStreamingCall(
               new MethodHandlers<
-                in.srini91.learn.proto.models.GpioRequest,
-                in.srini91.learn.proto.models.GpioData>(
+                in.bosch.sdv.proto.models.GpioRequest,
+                in.bosch.sdv.proto.models.GpioData>(
                   this, METHODID_READ_GPIO_STATE)))
           .addMethod(
             getWriteGpioDataMethod(),
             io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
-                in.srini91.learn.proto.models.GpioRequest,
-                in.srini91.learn.proto.models.GpioData>(
+                in.bosch.sdv.proto.models.GpioRequest,
+                in.bosch.sdv.proto.models.GpioData>(
                   this, METHODID_WRITE_GPIO_DATA)))
           .addMethod(
             getLedStripDataMethod(),
             io.grpc.stub.ServerCalls.asyncClientStreamingCall(
               new MethodHandlers<
-                in.srini91.learn.proto.models.LedStripData,
-                in.srini91.learn.proto.models.LedStripData>(
+                in.bosch.sdv.proto.models.LedStripData,
+                in.bosch.sdv.proto.models.LedStripData>(
                   this, METHODID_LED_STRIP_DATA)))
+          .addMethod(
+            getUartWriteDataMethod(),
+            io.grpc.stub.ServerCalls.asyncClientStreamingCall(
+              new MethodHandlers<
+                in.bosch.sdv.proto.models.UartData,
+                in.bosch.sdv.proto.models.Status>(
+                  this, METHODID_UART_WRITE_DATA)))
           .build();
     }
   }
@@ -220,26 +265,34 @@ public final class PodmanDemoServiceGrpc {
 
     /**
      */
-    public void readGpioState(in.srini91.learn.proto.models.GpioRequest request,
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData> responseObserver) {
+    public void readGpioState(in.bosch.sdv.proto.models.GpioRequest request,
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData> responseObserver) {
       io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getReadGpioStateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioRequest> writeGpioData(
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData> responseObserver) {
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioRequest> writeGpioData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getWriteGpioDataMethod(), getCallOptions()), responseObserver);
     }
 
     /**
      */
-    public io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.LedStripData> ledStripData(
-        io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.LedStripData> responseObserver) {
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.LedStripData> ledStripData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.LedStripData> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
           getChannel().newCall(getLedStripDataMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.UartData> uartWriteData(
+        io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.Status> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncClientStreamingCall(
+          getChannel().newCall(getUartWriteDataMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -259,8 +312,8 @@ public final class PodmanDemoServiceGrpc {
 
     /**
      */
-    public java.util.Iterator<in.srini91.learn.proto.models.GpioData> readGpioState(
-        in.srini91.learn.proto.models.GpioRequest request) {
+    public java.util.Iterator<in.bosch.sdv.proto.models.GpioData> readGpioState(
+        in.bosch.sdv.proto.models.GpioRequest request) {
       return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getReadGpioStateMethod(), getCallOptions(), request);
     }
@@ -284,6 +337,7 @@ public final class PodmanDemoServiceGrpc {
   private static final int METHODID_READ_GPIO_STATE = 0;
   private static final int METHODID_WRITE_GPIO_DATA = 1;
   private static final int METHODID_LED_STRIP_DATA = 2;
+  private static final int METHODID_UART_WRITE_DATA = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -303,8 +357,8 @@ public final class PodmanDemoServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_READ_GPIO_STATE:
-          serviceImpl.readGpioState((in.srini91.learn.proto.models.GpioRequest) request,
-              (io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData>) responseObserver);
+          serviceImpl.readGpioState((in.bosch.sdv.proto.models.GpioRequest) request,
+              (io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -318,10 +372,13 @@ public final class PodmanDemoServiceGrpc {
       switch (methodId) {
         case METHODID_WRITE_GPIO_DATA:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.writeGpioData(
-              (io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.GpioData>) responseObserver);
+              (io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.GpioData>) responseObserver);
         case METHODID_LED_STRIP_DATA:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.ledStripData(
-              (io.grpc.stub.StreamObserver<in.srini91.learn.proto.models.LedStripData>) responseObserver);
+              (io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.LedStripData>) responseObserver);
+        case METHODID_UART_WRITE_DATA:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.uartWriteData(
+              (io.grpc.stub.StreamObserver<in.bosch.sdv.proto.models.Status>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -334,7 +391,7 @@ public final class PodmanDemoServiceGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return in.srini91.learn.proto.models.Gpio.getDescriptor();
+      return in.bosch.sdv.proto.models.Gpio.getDescriptor();
     }
 
     @java.lang.Override
@@ -376,6 +433,7 @@ public final class PodmanDemoServiceGrpc {
               .addMethod(getReadGpioStateMethod())
               .addMethod(getWriteGpioDataMethod())
               .addMethod(getLedStripDataMethod())
+              .addMethod(getUartWriteDataMethod())
               .build();
         }
       }
